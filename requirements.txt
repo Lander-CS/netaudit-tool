@@ -1,0 +1,4 @@
+# Este projeto utiliza a Python Standard Library.
+# Nenhuma dependência externa obrigatória para execução.
+# Para desenvolvimento/distribuição:
+setuptools>=60.0.0
