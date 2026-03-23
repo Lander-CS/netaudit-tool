@@ -49,17 +49,17 @@ risksightbr 192.168.1.15
 
 **2. Varrer múltiplos alvos:**
 ```bash
-netaudit 192.168.1.15,10.0.0.5
+risksightbr 192.168.1.15,10.0.0.5
 ```
 
 **3. Varrer uma sub-rede inteira (CIDR):**
 ```bash
-netaudit 192.168.1.0/24
+risksightbr 192.168.1.0/24
 ```
 
 **4. Salvar relatório em local específico:**
 ```bash
-netaudit 192.168.1.1 --output "C:/MeusDocumentos/auditoria_cliente_x.json"
+risksightbr 192.168.1.1 --output "C:/MeusDocumentos/auditoria_cliente_x.json"
 ```
 
 ## ⚠️ Aviso Legal
