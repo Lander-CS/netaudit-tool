@@ -10,11 +10,11 @@ from .analyzer import analyze_results, display_dashboard
 def main():
     """Função principal do auditor (CLI)."""
     print("\n" + "="*80)
-    print(" NETWORK SECURITY AUDIT TOOL (NetAudit)")
+    print(" NETWORK SECURITY AUDIT TOOL (NetAudit v1.0) - Desenvolvido por Lander")
     print("="*80)
     print("⚠️  AVISO: Use APENAS em redes autorizadas!")
     print("="*80)
-
+    print("Github: https://github.com/Lander-CS \n Linkedin:https://www.linkedin.com/in/lander-cybersecurity/ \n Email:aragaolandersonti@gmail.com")
     parser = argparse.ArgumentParser(description="Ferramenta Profissional de Auditoria de Segurança de Rede")
     parser.add_argument("target", help="Alvo (IP, Hostname, CIDR ou lista separada por vírgulas)")
     parser.add_argument("--output", "-o", help="Caminho do arquivo de saída JSON (opcional)")
