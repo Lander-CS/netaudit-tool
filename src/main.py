@@ -2,6 +2,7 @@ import json
 import argparse
 import sys
 import os
+import ctypes
 from datetime import datetime
 
 from .scanner import PortScanner
@@ -9,8 +10,21 @@ from .analyzer import analyze_results, display_dashboard
 
 def main():
     """Função principal do auditor (CLI)."""
+    # Verifica permissões de administrador/root
+    try:
+        is_admin = os.getuid() == 0
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+
+    if not is_admin:
+        print("\n❌ ERRO CRÍTICO: Permissões insuficientes.")
+        print("   Esta ferramenta requer acesso de nível Administrador/Root para criar sockets.")
+        print("   -> Windows: Execute o terminal como Administrador.")
+        print("   -> Linux/Mac: Use 'sudo risksightbr ...'\n")
+        sys.exit(1)
+
     print("\n" + "="*80)
-    print(" NETWORK SECURITY AUDIT TOOL (NetAudit v1.0) - Desenvolvido por Lander")
+    print(" RiskSightBR - Network Security & Risk Analyzer (v1.0) - Dev: Lander")
     print("="*80)
     print("⚠️  AVISO: Use APENAS em redes autorizadas!")
     print("="*80)
@@ -56,15 +70,15 @@ def main():
         output_file = os.path.abspath(args.output)
     else:
         timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"audit_report_{timestamp_str}.json"
+        filename = f"risksight_report_{timestamp_str}.json"
         output_file = os.path.abspath(os.path.join(reports_dir, filename))
 
     # Salva JSON
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=4, ensure_ascii=False)
 
-    # Caminho do Log (definido no config.py como reports/network_audit.log)
-    log_file = os.path.abspath(os.path.join(reports_dir, "network_audit.log"))
+    # Caminho do Log (definido no config.py como reports/risksightbr.log)
+    log_file = os.path.abspath(os.path.join(reports_dir, "risksightbr.log"))
 
     print("\n" + "="*80)
     print(" AUDITORIA CONCLUÍDA")

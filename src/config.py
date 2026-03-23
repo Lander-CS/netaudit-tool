@@ -15,10 +15,10 @@ def setup_logging():
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
             logging.StreamHandler(sys.stdout),
-            logging.FileHandler(os.path.join(reports_dir, 'network_audit.log'))
+            logging.FileHandler(os.path.join(reports_dir, 'risksightbr.log'))
         ]
     )
-    return logging.getLogger("NetworkAudit")
+    return logging.getLogger("RiskSightBR")
 
 logger = setup_logging()
 

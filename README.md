@@ -1,6 +1,6 @@
-# 🔐 Network Security Audit Tool (NetAudit)
+# 🔐 RiskSightBR (Network Security Audit Tool)
 
-Ferramenta profissional de auditoria de segurança de rede desenvolvida em Python. Realiza varredura de portas, identificação de serviços (Banner Grabbing) e análise de riscos baseada na matriz NIST SP 800-53.
+Ferramenta profissional de auditoria de segurança de rede e análise de riscos desenvolvida em Python. Realiza varredura de portas, identificação de serviços (Banner Grabbing) e análise de riscos baseada na matriz NIST SP 800-53.
 
 ## 🚀 Funcionalidades
 
@@ -19,7 +19,7 @@ Ferramenta profissional de auditoria de segurança de rede desenvolvida em Pytho
 
 1. Clone o repositório e entre na pasta:
    ```bash
-   cd netaudit
+   cd RiskSightBR
    ```
 
 2. Crie um ambiente virtual (opcional, mas recomendado):
@@ -38,13 +38,13 @@ Ferramenta profissional de auditoria de segurança de rede desenvolvida em Pytho
 
 ## 💻 Como Usar
 
-Após a instalação, o comando `netaudit` estará disponível globalmente no seu terminal (dentro do ambiente virtual).
+Após a instalação, o comando `risksightbr` estará disponível globalmente no seu terminal (dentro do ambiente virtual).
 
 ### Exemplos:
 
 **1. Varrer um IP único:**
 ```bash
-netaudit 192.168.1.15
+risksightbr 192.168.1.15
 ```
 
 **2. Varrer múltiplos alvos:**

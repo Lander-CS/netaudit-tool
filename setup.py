@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="netaudit",
+    name="risksightbr",
     version="1.0.0",
-    description="Ferramenta Profissional de Auditoria de Redes",
+    description="RiskSightBR - Ferramenta de Análise de Riscos e Auditoria de Redes",
     packages=find_packages(),
     install_requires=[
         # Adicione dependências aqui se tiver (ex: 'requests')
     ],
     entry_points={
         'console_scripts': [
-            'netaudit=src.main:main',
+            'risksightbr=src.main:main',
         ],
     },
 )
